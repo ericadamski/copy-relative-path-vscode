@@ -2,7 +2,7 @@
     "name": "copy-relative-path",
     "displayName": "copy-relative-path",
     "description": "Copy the relative path of the open editor",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "ericadamski",
     "engines": {
         "vscode": "^1.20.0"
