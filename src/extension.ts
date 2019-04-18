@@ -7,9 +7,13 @@ export function activate(context: ExtensionContext) {
   context.subscriptions.push(
     commands.registerCommand("copy-relative-path.copy", () => {
       let name;
+      const { hideNotification } = workspace.getConfiguration("cprel");
+
       copy(
         (name = workspace.asRelativePath(window.activeTextEditor.document.uri)),
-        () => window.showInformationMessage(`Copied ${name} to clipboard! 🎉`)
+        () =>
+          !hideNotification &&
+          window.showInformationMessage(`Copied ${name} to clipboard! 🎉`)
       );
     })
   );
